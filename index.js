@@ -45,13 +45,17 @@ app.get("/contact", function(req, res){
     res.render("contact", {name: 'Aditya'});
 });
 
+app.get("/", function(req, res){
+    throw Error("pata nahi bhai");
+})
+
 app.get("/error", function(req,res){
     throw new Error("Something went wrong");
 })
 
-app.get("/contact/error"), function(req,res){
-    throw new Error("Someyhing went wrong");
-}
+app.get("/contact/error", function(req, res){
+    throw new error("Soomething went wrong");
+});
 
 
 app.use(function errorHandler (err, req, res, next) {
